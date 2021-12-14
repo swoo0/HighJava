@@ -1,4 +1,4 @@
-package JDBC.kr.or.ddit.basic;
+package kr.or.ddit.basic;
 
 import java.io.File;
 import java.io.FileInputStream;

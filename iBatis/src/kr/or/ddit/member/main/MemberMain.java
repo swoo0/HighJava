@@ -3,6 +3,8 @@ package kr.or.ddit.member.main;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import kr.or.ddit.member.service.IMemberService;
 import kr.or.ddit.member.service.MemberServiceImpl;
 import kr.or.ddit.member.vo.MemberVO;
@@ -36,6 +38,9 @@ create table mymember(
 
 */
 public class MemberMain {
+	
+	// LOG4J를 이용해 로그를 남기기위해 로거 생성하기
+	private static final Logger sqlLogger = Logger.getLogger("log4exam.sql.insertQuery");
 
 	// 사용할 서비스객체를 담기위한 변수를 선언한다.
 	private IMemberService memService;

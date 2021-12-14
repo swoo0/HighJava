@@ -2,7 +2,7 @@ package board.service;
 
 import java.util.List;
 
-import board.dao.BoardImpl;
+import board.dao.BoardDaoImpl;
 import board.dao.IBoardDao;
 import board.vo.BoardVO;
 
@@ -12,7 +12,7 @@ public class BoardServiceImpl implements IBoardService {
 	private IBoardDao boardDao;
 	
 	public BoardServiceImpl() {
-		boardDao = new BoardImpl();
+		boardDao = new BoardDaoImpl();
 	}
 	
 	@Override

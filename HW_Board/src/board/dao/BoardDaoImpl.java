@@ -11,7 +11,7 @@ import java.util.List;
 import board.vo.BoardVO;
 import util.JDBCUtil;
 
-public class BoardImpl implements IBoardDao {
+public class BoardDaoImpl implements IBoardDao {
 	
 	private Connection conn;
 	private Statement stmt;

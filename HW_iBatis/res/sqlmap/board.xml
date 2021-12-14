@@ -26,9 +26,6 @@
  -->	
 
 
-
-
-
 <!-- 게시글 작성 -->
 <insert id="writeBoard" parameterClass="boardVO">
 
@@ -36,6 +33,7 @@
 			values (BOARD_SEQ.nextVal, #boardTitle#, #boardWriter#, sysdate, #boardContent#)
 
 </insert>
+
 
 
 <!-- 게시글 수정 -->
@@ -48,7 +46,6 @@
 	 WHERE board_no = #boardNo#
 
 </update>
-
 
 <!-- 게시글 삭제 -->
 <delete id="deleteBoard" parameterClass="String">
@@ -75,7 +72,6 @@
 
 </select>
 
-
 <!-- 게시글 조회 (결과 한개 - List 필요 없음.)-->
 <select id="getBoard" parameterClass="String" resultMap="boardMap">
 
@@ -84,7 +80,6 @@
 	
 </select>
 
-
 <!-- checkBoard 쿼리 -->
 <select id="checkBoard" parameterClass="String" resultClass="int">
 
@@ -92,7 +87,6 @@
 	 where board_no = #boardNo#
 
 </select>
-
 
 <!-- 게시글 검색 -->
 <select id="searchBoard" parameterClass="boardVO" resultMap="boardMap">
@@ -113,6 +107,10 @@
 		and board_writer = #boardWriter#
 	</isNotEmpty>
 	
+<!-- 	<isNotEmpty property="boardDate"> -->
+<!-- 		and board_writer = #boardWriter# -->
+<!-- 	</isNotEmpty> -->
+
 </select>
 
 

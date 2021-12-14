@@ -1,4 +1,4 @@
-package JDBC.kr.or.ddit.basic;
+package kr.or.ddit.basic;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,8 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import Util.JDBCUtil3;
-import Util.ScanUtil;
+import org.apache.log4j.Logger;
+
+import kr.or.ddit.util.JDBCUtil3;
 
 /*
 	회원정보를 관리하는 프로그램을 작성하는데 
@@ -38,6 +39,13 @@ create table mymember(
 
 */
 public class T01_MemberInfo {
+	
+	// LOG4J를 이용한 로그를 남기기위해 로거 생성하기
+	private static final Logger sqlLogger = Logger.getLogger("log4jexam.sql.Query");
+	private static final Logger paramLogger = Logger.getLogger("log4jexam.sql.Parameter");
+	private static final Logger resultLogger = Logger.getLogger(T01_MemberInfo.class);
+	
+	
 	
 	private Connection conn;
 	private Statement stmt;
@@ -282,13 +290,25 @@ boolean chk = false;
 					+ " (mem_id, mem_name, mem_tel, mem_addr) "
 					+ " VALUES (?, ?, ?, ?)";
 			
+			sqlLogger.info("SQL => " + sql);
+
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memId);
 			pstmt.setString(2, memName);
 			pstmt.setString(3, memTel);
 			pstmt.setString(4, memAddr);
 			
+			paramLogger.debug("memId : " + memId + ", "
+							+ "memName : " + memName + ", "
+							+ "memTel : " + memTel + ", "
+							+ "memAddr : " + memAddr);
+			
+			
+			
 			int cnt = pstmt.executeUpdate();
+			
+			resultLogger.fatal("cnt : " + cnt);
 			
 			if (cnt > 0) {
 				System.out.println(memId + "회원 추가 작업 성공");

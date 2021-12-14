@@ -8,11 +8,12 @@ import board.vo.BoardVO;
 import util.Scan;
 
 public class BoardMain {
+	
 
 	// 사용할 Service 객체를 담을 변수 선언.
 	private IBoardService boardService;
 
-	public BoardMain() {
+	private BoardMain() {
 		boardService = BoardServiceImpl.getInstance(); 
 	}
 	
@@ -92,6 +93,8 @@ public class BoardMain {
 
 		int result = boardService.writeBoard(bv);
 
+		
+		
 		if (result > 0) {
 			System.out.println("게시글 작성 완료.");
 		} else {
@@ -157,7 +160,6 @@ public class BoardMain {
 				System.out.println("게시글 수정 실패 !");
 			}
 		}
-
 	}
 	
 	/*

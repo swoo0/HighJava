@@ -47,6 +47,7 @@
 
 </update>
 
+
 <!-- 게시글 삭제 -->
 <delete id="deleteBoard" parameterClass="String">
 

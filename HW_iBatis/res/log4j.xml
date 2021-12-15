@@ -20,11 +20,11 @@
 <!-- 	    </layout> -->
 <!-- 	</appender> -->
 	
-	<logger name="java.sql.Connection">
-        <level value="DEBUG"/>
-		<appender-ref ref="console" />
-        <appender-ref ref="file" /> 
-    </logger>
+<!-- 	<logger name="java.sql.Connection"> -->
+<!--         <level value="DEBUG"/> -->
+<!-- 		<appender-ref ref="console" /> -->
+<!--         <appender-ref ref="file" />  -->
+<!--     </logger> -->
     
 <!-- 	<logger name="java.sql.Connection"> -->
 <!--         <level value="DEBUG"/> -->

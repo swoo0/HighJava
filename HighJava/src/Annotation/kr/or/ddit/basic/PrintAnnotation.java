@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
 	에너테이션 요소의 규칙
 	 1. 요소의 타입은 기본형, String, enum, annotation, class만 허용함.
 	 2. ()안에 매개변수를 선언할 수 없다.
-	 3. 에외를 선언할 수 없다.
+	 3. 예외를 선언할 수 없다.
 	 4. 요소의 타입에 타입 파라미터(제너릭타입 글자)를 사용할 수 없다.
 */
 

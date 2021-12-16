@@ -7,7 +7,8 @@ public class Service {
 		System.out.println("메서드1에서 출력되었습니다.");
 	}
 	
-	@PrintAnnotation(value="%")
+//	@PrintAnnotation(value="%")  value값 하나만 있는 경우 생략 가능 
+	@PrintAnnotation("%")
 	public void method2() {
 		System.out.println("메서드2에서 출력되었습니다.");
 	}

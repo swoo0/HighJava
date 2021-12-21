@@ -33,7 +33,7 @@ public class UdpFileReceiver {
 			
 			str = new String(dp.getData()).trim();
 			
-			fos = new FileOutputStream("D:/D_Other/ + str");
+			fos = new FileOutputStream("D:/D_Other/" + str);
 			
 			// 전송파일 크기(bytes) 받기
 			buffer = new byte[1000];
@@ -50,6 +50,8 @@ public class UdpFileReceiver {
 				ds.receive(dp);
 				readBytes = dp.getLength();
 				fos.write(dp.getData(), 0, readBytes);
+				
+				totalReadBytes += readBytes;
 				
 				System.out.println("진행 상태 : " + totalReadBytes + "/" + fileSize + " Bytes(" + (totalReadBytes * 100 / fileSize) + " %)");
 				if (totalReadBytes >= fileSize ) {

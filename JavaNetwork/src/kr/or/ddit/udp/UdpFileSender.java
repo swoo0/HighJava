@@ -9,10 +9,10 @@ import java.net.InetAddress;
 
 public class UdpFileSender {
 	public static void main(String[] args) throws InterruptedException {
-		String receiveIp = "192.168.44.40";
+		String receiveIp = "192.168.44.55";
 		int port = 8888;
 		
-		File file = new File("D:/D_Other/호랭이.jfif");
+		File file = new File("D:/D_Other/lion.jpg");
 		if (!file.exists()) {
 			System.out.println("파일이 존재하지 않습니다.");
 			System.exit(0);

@@ -61,7 +61,7 @@ public class MultiChatServer {
 				DataOutputStream dos = new DataOutputStream(clients.get(name).getOutputStream());
 				dos.writeUTF(msg); // 메시지 보내기
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-package kr.or.ddit.tcp;
+package homework;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -45,10 +45,27 @@ public class MultiChatServer {
 	}
 
 	/**
-	 * 대화방 즉, Map에 저장된 전체 유저에게 안내메시지를 전송하는 메서드
+	 * 클라이언트가 보낸 메시지가 일반 메시지인지 귓속말인지 구분하여
+	 * 일반메시지는 바로 
+	 * @param msg, from
+	 */
+	public void sendMessage(String msg, String from) {
+		// indexOf()메서드를 이용해 msg를 스캔하여 /w 문자열이 존재하면 위치값을 반환해주고
+		// 없으면 -1을 반환해주는 것을 이용하여 
+		// 
+		if (msg.indexOf("/w") == -1) {
+			sendMessage("[" + from + "]" + msg);
+		} else {
+			sendWhisper(msg, from);
+		}
+	}
+	
+	
+	
+	/**
+	 *  대화방 즉, Map에 저장된 전체 유저에게 메시지를 전송하는 메서드
 	 * 
-	 * @param msg
-	 *            안내메시지
+	 * @param msg 안내메시지
 	 */
 	public void sendMessage(String msg) {
 		// Map에 저장된 유저의 대화명 리스트 추출(key값 구하기)
@@ -66,9 +83,39 @@ public class MultiChatServer {
 		}
 	}
 
-	public void sendMessage(String msg, String from) {
-		sendMessage("[" + from + "]" + msg);
+	
+	public void sendWhisper(String msg, String from) {
+		// 유저가 귓속말로 보낸 메시지에서 /w 를 제외하고
+		// 해당 메시지를 받을 유저닉네임, 메시지내용 을 뽑아서 각각 변수에 담음.
+		String[] wMsg = msg.split(" ", 3);
+		String name = wMsg[1];
+		String sendMsg = wMsg[2];
+		
+		// 귓속말을 받을 유저가 clients에 담겨 있는지 확인
+		if (clients.containsKey(name)) {
+			// 유저가 서버에 있다면..
+			try {
+				// 귓속말을 보낸 사람에게 출력될 메시지
+				DataOutputStream dos = new DataOutputStream(clients.get(from).getOutputStream());
+				dos.writeUTF("당신이 " + name + "님에게 : " + sendMsg);
+				
+				// 귓속말을 받는 사람에게 출력될 메시지
+				dos = new DataOutputStream(clients.get(name).getOutputStream());
+				dos.writeUTF(from + "님이 당신에게 : " + sendMsg);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
+		} else {
+			// 유저가 서버에 없다면..
+			try {
+				DataOutputStream dos = new DataOutputStream(clients.get(from).getOutputStream());
+				dos.writeUTF(name + "님이 대화방에 존재 하지 않습니다.");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
+
 
 	// 서버에서 클라이언트 메시지를 전송할 Thread를 Inner Class로 정의함.
 	// Inner클래스에서는 부모 클래스의 멤버들을 직접 사용할 수 있다.

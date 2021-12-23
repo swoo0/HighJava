@@ -37,10 +37,19 @@ public class JsonSimpleWrite {
 		
 		mv2 = new JSONObject();
 		
+		mv2.put("name", "이순신");
+		mv2.put("job", "자영업");
+		mv2.put("age", 40);
+		mv2.put("addr", "서울시 영등포구 여의도");
+		memList.add(mv2);
+		
+		
+		mv2 = new JSONObject();
+		
 		mv2.put("name", "강감찬");
 		mv2.put("job", "회사원");
 		mv2.put("age", 20);
-		mv2.put("addr", "서울시 영등포구 여의도동");
+		mv2.put("addr", "부산시 해운대구");
 		memList.add(mv2);
 		
 		mv2 = new JSONObject();

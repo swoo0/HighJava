@@ -45,15 +45,15 @@ public class MultiChatServer {
 	}
 
 	/**
-	 * 클라이언트가 보낸 메시지가 일반 메시지인지 귓속말인지 구분하여
-	 * 일반메시지는 바로 
-	 * @param msg, from
+	 * 클라이언트가 보낸 메시지가 일반 메시지인지 귓속말인지 구분 하는 메서드
+	 * 
+	 * @param msg 
+	 * @param from 메시지를 보낸 유저이름
 	 */
 	public void sendMessage(String msg, String from) {
-		// indexOf()메서드를 이용해 msg를 스캔하여 /w 문자열이 존재하면 위치값을 반환해주고
-		// 없으면 -1을 반환해주는 것을 이용하여 
-		// 
-		if (msg.indexOf("/w") == -1) {
+		// indexOf()메서드로 msg를 스캔하여 /w 문자열이 존재하면 위치값을 반환해주고
+		// 없으면 -1을 반환해주는 것을 이용
+		if (msg.indexOf("/w") == -1 && msg.indexOf("/W") == -1 && msg.indexOf("/ㅈ") == -1) {
 			sendMessage("[" + from + "]" + msg);
 		} else {
 			sendWhisper(msg, from);
@@ -65,7 +65,7 @@ public class MultiChatServer {
 	/**
 	 *  대화방 즉, Map에 저장된 전체 유저에게 메시지를 전송하는 메서드
 	 * 
-	 * @param msg 안내메시지
+	 * @param msg 메시지
 	 */
 	public void sendMessage(String msg) {
 		// Map에 저장된 유저의 대화명 리스트 추출(key값 구하기)
@@ -83,20 +83,27 @@ public class MultiChatServer {
 		}
 	}
 
-	
+	/**
+	 * 대화방 안의 특정 유저에게 메시지를 전송하는 메서드
+	 * 
+	 * @param msg 귓속말을 받을 유저이름과 내용이 담긴 메시지
+	 * @param from 귓속말을 보낸 유저이름
+	 */
 	public void sendWhisper(String msg, String from) {
 		// 유저가 귓속말로 보낸 메시지에서 /w 를 제외하고
 		// 해당 메시지를 받을 유저닉네임, 메시지내용 을 뽑아서 각각 변수에 담음.
-		String[] wMsg = msg.split(" ", 3);
-		String name = wMsg[1];
-		String sendMsg = wMsg[2];
+		String[] msgArr = msg.split(" ", 3);
+		String name = msgArr[1];
+		String sendMsg = msgArr[2];
+		
+		DataOutputStream dos;
 		
 		// 귓속말을 받을 유저가 clients에 담겨 있는지 확인
 		if (clients.containsKey(name)) {
 			// 유저가 서버에 있다면..
 			try {
 				// 귓속말을 보낸 사람에게 출력될 메시지
-				DataOutputStream dos = new DataOutputStream(clients.get(from).getOutputStream());
+				dos = new DataOutputStream(clients.get(from).getOutputStream());
 				dos.writeUTF("당신이 " + name + "님에게 : " + sendMsg);
 				
 				// 귓속말을 받는 사람에게 출력될 메시지
@@ -108,7 +115,8 @@ public class MultiChatServer {
 		} else {
 			// 유저가 서버에 없다면..
 			try {
-				DataOutputStream dos = new DataOutputStream(clients.get(from).getOutputStream());
+				// 귓속말을 보낸 사람에게 출력될 실패 메시지
+				dos = new DataOutputStream(clients.get(from).getOutputStream());
 				dos.writeUTF(name + "님이 대화방에 존재 하지 않습니다.");
 			} catch (IOException e) {
 				e.printStackTrace();

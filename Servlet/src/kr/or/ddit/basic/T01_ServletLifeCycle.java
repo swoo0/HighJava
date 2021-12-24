@@ -18,6 +18,7 @@ public class T01_ServletLifeCycle extends HttpServlet {
 	public void init() throws ServletException {
 		// 초기화 코드 작성
 		System.out.println("init() 호출됨...");
+		
 	}
 		
 	@Override
@@ -31,7 +32,9 @@ public class T01_ServletLifeCycle extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 메서드 방식이 GET인 경우 호출됨...
 		System.out.println("doget() 호출됨...");
-	}
+		
+		throw new ServletException("예외 발생 !");	
+		}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

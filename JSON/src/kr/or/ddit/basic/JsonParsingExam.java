@@ -17,9 +17,9 @@ import org.w3c.dom.Element;
 public class JsonParsingExam {
 	public void parse() {
 		try {
-			// DOM Document 객체 생성하기
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = dbf.newDocumentBuilder();
+//			// DOM Document 객체 생성하기
+//			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+//			DocumentBuilder builder = dbf.newDocumentBuilder();
 			
 			
 			String svcKey = "Grid_20150827000000000227_1";  // 레시피 재료 정보 조회 서비스
@@ -32,7 +32,7 @@ public class JsonParsingExam {
 					+ "/json/"+ svcKey + "/"+startIdx +"/" + endIdx
 					+"?RECIPE_ID=" +  recipeId);
 			
-//			System.out.println(url);
+			System.out.println(url);
 			
 			// JSON 파서로 부터 입력 받은 파일을 파싱하도록 요청
 			JSONParser parser = new JSONParser();
@@ -46,6 +46,8 @@ public class JsonParsingExam {
 			url = new URL("http://211.237.50.150:7080/openapi/"+ apiKey
 					+ "/json/"+ svcKey + "/"+startIdx +"/" + endIdx
 					+"?RECIPE_ID=" +  recipeId);
+			
+			System.out.println(url);
 			
 			jsonObject = (JSONObject) parser.parse(new InputStreamReader(url.openStream()));
 

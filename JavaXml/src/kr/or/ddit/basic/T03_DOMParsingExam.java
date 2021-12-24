@@ -29,7 +29,7 @@ public class T03_DOMParsingExam {
 					+ "/xml/"+ svcKey + "/"+startIdx +"/" + endIdx
 					+"?RECIPE_ID=" +  recipeId);
 			
-//			System.out.println(url);
+			System.out.println(url);
 			
 			// DOM 파서로 부터 입력 받은 파일을 파싱하도록 요청
 			Document xmlDoc = builder.parse(url.toString());
@@ -70,32 +70,9 @@ public class T03_DOMParsingExam {
 					System.out.println("--------------------------------------------------------------------");
 				}
 			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 	

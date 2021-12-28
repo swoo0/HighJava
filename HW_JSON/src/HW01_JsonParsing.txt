@@ -17,7 +17,9 @@
 						 	   "pa":"1012.5","paQcflg":"0","ps":"1023.8","psQcflg":"0","ss":"","ssQcflg":"9",
 						 	   "icsr":"","dsnw":"2.2","hr3Fhsc":"","dc10Tca":"","dc10LmcsCa":"","clfmAbbrCd":"",
 						 	   "lcsCh":"","vs":"","gndSttCd":"","dmstMtphNo":"","ts":"-6.5","tsQcflg":"0",
-						 	   "m005Te":"-4.8","m01Te":"-2.1","m02Te":"-0.6","m03Te":"0.6"}]},
+						 	   "m005Te":"-4.8","m01Te":"-2.1","m02Te":"-0.6","m03Te":"0.6"}
+						 	 ]
+					  },
 			"pageNo":1,
 			"numOfRows":2,
 			"totalCount":3625}

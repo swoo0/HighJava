@@ -53,7 +53,7 @@ public class T06_ServletCookie extends HttpServlet {
 		
 		2. 쿠키객체의 최대지속시간을 0으로 설정한다.
 		
-		3. 설정한 쿠키객케를 응답헤더에 추가하여 전송한다.
+		3. 설정한 쿠키객체를 응답헤더에 추가하여 전송한다.
 	*/	
 	
 		Cookie cookie = null;

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+
   <display-name>Servlet</display-name>
 	
 	<servlet>
 		<servlet-name>T01_ServletLifeCycle</servlet-name>
 		<servlet-class>kr.or.ddit.basic.T01_ServletLifeCycle</servlet-class>
 		<!-- 객체가 생성되기 전 init() 호출 -->
+
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -62,10 +64,78 @@
 		<servlet-name>T06_ServletCookie</servlet-name>
 		<servlet-class>kr.or.ddit.basic.T06_ServletCookie</servlet-class>
 	</servlet>
-		<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>T06_ServletCookie</servlet-name>
 		<url-pattern>/T06_ServletCookie</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T07_ServletSession</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T07_ServletSession</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T07_ServletSession</servlet-name>
+		<url-pattern>/T07_ServletSession</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>T10_ServletContextListener</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T10_ServletContextListener</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T10_ServletContextListener</servlet-name>
+		<url-pattern>/T10_ServletContextListener</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>T11_ServletRequestListener</servlet-name>
+		<servlet-class>kr.or.ddit.basic.T11_ServletRequestListener</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>T11_ServletRequestListener</servlet-name>
+		<url-pattern>/T11_ServletRequestListener</url-pattern>
+	</servlet-mapping>
+
+
+
+	<filter>
+		<filter-name>T08_ServletFilter</filter-name>
+		<filter-class>kr.or.ddit.basic.T08_ServletFilter</filter-class>
+		<init-param>
+			<param-name>init-param</param-name>
+			<param-value>Woo</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>T08_ServletFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>T09_ServletFilter2</filter-name>
+		<filter-class>kr.or.ddit.basic.T09_ServletFilter2</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>T09_ServletFilter2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+	
+	
+	<listener>
+		<display-name>MyServletContextListener</display-name>
+		<listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<display-name>MyServletRequestListener</display-name>
+		<listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class>
+	</listener>
+	
 	
 </web-app>
 

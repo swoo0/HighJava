@@ -33,7 +33,7 @@ public class T01_ServletLifeCycle extends HttpServlet {
 		// 메서드 방식이 GET인 경우 호출됨...
 		System.out.println("doget() 호출됨...");
 		
-		throw new ServletException("예외 발생 !");	
+//		throw new ServletException("예외 발생 !");	
 		}
 	
 	@Override

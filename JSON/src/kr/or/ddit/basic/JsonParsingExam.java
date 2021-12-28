@@ -17,10 +17,6 @@ import org.w3c.dom.Element;
 public class JsonParsingExam {
 	public void parse() {
 		try {
-//			// DOM Document 객체 생성하기
-//			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//			DocumentBuilder builder = dbf.newDocumentBuilder();
-			
 			
 			String svcKey = "Grid_20150827000000000227_1";  // 레시피 재료 정보 조회 서비스
 			String apiKey = "1df7e8571e8df3f8cbc9b87691ca7d3e4d04f03c593d477e52bf67b03f0b6e1c"; // 개인별 발급.
@@ -65,18 +61,12 @@ public class JsonParsingExam {
 					
 					JSONObject jObj = (JSONObject) obj;
 					
-//					String rowNum = "";
-//					String irdntNm = "";
-//					String irdntCpcty = "";
-//					String irdntTyNm = "";
-					
 					String formatStr = String.format("%3s %8s %10s %10s %8s", 
 							jObj.get("ROW_NUM") , jObj.get("RECIPE_ID"), jObj.get("IRDNT_NM"), jObj.get("IRDNT_CPCTY"), jObj.get("IRDNT_TY_NM"));
 					
 					System.out.println(formatStr);
 					System.out.println("--------------------------------------------------------------------");
 				} 
-			
 			}
 		
 		} catch (Exception e) {

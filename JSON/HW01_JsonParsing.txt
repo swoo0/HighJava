@@ -1,0 +1,25 @@
+{"response":
+	{
+	 "header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},
+	 "body":{
+	 		 "dataType":"JSON",
+			 "items":{
+					  "item":[{"tm":"2010-01-01 01:00","rnum":"1","stnId":"108","stnNm":"서울",
+			 	 		 	   "ta":"-11.0","taQcflg":"0","rn":"","rnQcflg":"","ws":"1.2","wsQcflg":"0",
+			 		 	 	   "wd":"290","wdQcflg":"0","hm":"45","hmQcflg":"0","pv":"1.2","td":"-20.6",
+						  	   "pa":"1012.5","paQcflg":"0","ps":"1023.8","psQcflg":"0","ss":"","ssQcflg":"9",
+							   "icsr":"","dsnw":"2.2","hr3Fhsc":"","dc10Tca":"","dc10LmcsCa":"","clfmAbbrCd":"",
+						 	   "lcsCh":"","vs":"","gndSttCd":"","dmstMtphNo":"","ts":"-6.5","tsQcflg":"0",
+						 	   "m005Te":"-4.7","m01Te":"-2.1","m02Te":"-0.6","m03Te":"0.6"},
+						 	  {"tm":"2010-01-01 02:00","rnum":"2","stnId":"108","stnNm":"서울",
+						 	   "ta":"-11.1","taQcflg":"0","rn":"","rnQcflg":"","ws":"1.7","wsQcflg":"0",
+						 	   "wd":"20","wdQcflg":"0","hm":"46","hmQcflg":"0","pv":"1.2","td":"-20.4",
+						 	   "pa":"1012.5","paQcflg":"0","ps":"1023.8","psQcflg":"0","ss":"","ssQcflg":"9",
+						 	   "icsr":"","dsnw":"2.2","hr3Fhsc":"","dc10Tca":"","dc10LmcsCa":"","clfmAbbrCd":"",
+						 	   "lcsCh":"","vs":"","gndSttCd":"","dmstMtphNo":"","ts":"-6.5","tsQcflg":"0",
+						 	   "m005Te":"-4.8","m01Te":"-2.1","m02Te":"-0.6","m03Te":"0.6"}]},
+			"pageNo":1,
+			"numOfRows":2,
+			"totalCount":3625}
+	}
+}

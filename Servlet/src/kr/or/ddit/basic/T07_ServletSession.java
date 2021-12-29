@@ -76,39 +76,12 @@ public class T07_ServletSession extends HttpServlet {
 			+ "<tr><td>User Id</td><td>" + userId + "</td></tr>"
 			+ "<tr><td>방문 횟수</td><td>" + visitCount + "</td></tr>"
 			+ "</table></body></html>");
-		
-		
+
 		
 //		session.invalidate();	// 세션 삭제.
 		session.setMaxInactiveInterval(20);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+
 	}
 	
 	@Override

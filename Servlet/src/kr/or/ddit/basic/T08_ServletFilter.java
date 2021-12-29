@@ -24,7 +24,7 @@ public class T08_ServletFilter implements Filter {
 	 - 인코딩 필터
 	 - 로깅 및 감사처리 필터
 	 - 이미지 변환 필터 등.
-	 */	
+	 */
 
 	@Override
 	public void init(FilterConfig config) throws ServletException {
@@ -42,7 +42,6 @@ public class T08_ServletFilter implements Filter {
 	public void destroy() {
 		// 필터객체가 웹컨테이너에 의해 서비스로부터 제거되기 전에 호출됨.
 		System.out.println("T08_ServletFilter => destroy() 호출됨.");
-		
 		
 	}
 

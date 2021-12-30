@@ -1,169 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1"
+metadata-complete="false">
 
   <display-name>Servlet</display-name>
-	
-	<servlet>
-		<servlet-name>T01_ServletLifeCycle</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T01_ServletLifeCycle</servlet-class>
-		<!-- 객체가 생성되기 전 init() 호출 -->
 
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T01_ServletLifeCycle</servlet-name>
-		<url-pattern>/T01_ServletLifeCycle</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T02_Servlet</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T02_Servlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T02_Servlet</servlet-name>
-		<url-pattern>/T02_Servlet</url-pattern>
-	</servlet-mapping>
+<!--   <servlet> -->
+<!--     <servlet-name>T01_ServletLifeCycle</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T01_ServletLifeCycle</servlet-class> -->
+<!--     <load-on-startup>1</load-on-startup> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T01_ServletLifeCycle</servlet-name> -->
+<!--     <url-pattern>/T01_ServletLifeCycle</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T02_Servlet</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T02_Servlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T02_Servlet</servlet-name> -->
+<!--     <url-pattern>/T02_Servlet</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T03_ServletParameter</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T03_ServletParameter</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T03_ServletParameter</servlet-name> -->
+<!--     <url-pattern>/T03_ServletParameter</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T04_ErrorHandler</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T04_ErrorHandler</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T04_ErrorHandler</servlet-name> -->
+<!--     <url-pattern>/T04_ErrorHandler</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/T04_ErrorHandler</location>
+  </error-page>
+  <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/T04_ErrorHandler</location>
+  </error-page>
+  
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T05_ServletContext</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T05_ServletContext</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T05_ServletContext</servlet-name> -->
+<!--     <url-pattern>/T05_ServletContext</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T06_ServletCookie</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T06_ServletCookie</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T06_ServletCookie</servlet-name> -->
+<!--     <url-pattern>/T06_ServletCookie</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T07_ServletSession</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T07_ServletSession</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T07_ServletSession</servlet-name> -->
+<!--     <url-pattern>/T07_ServletSession</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T10_ServletContextListener</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T10_ServletContextListener</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T10_ServletContextListener</servlet-name> -->
+<!--     <url-pattern>/T10_ServletContextListener</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T11_ServletRequestListener</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T11_ServletRequestListener</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T11_ServletRequestListener</servlet-name> -->
+<!--     <url-pattern>/T11_ServletRequestListener</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T12_HttpSessionListener</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T12_HttpSessionListener</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T12_HttpSessionListener</servlet-name> -->
+<!--     <url-pattern>/T12_HttpSessionListener</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>T13_ImageServlet</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T13_ImageServlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T13_ImageServlet</servlet-name> -->
+<!--     <url-pattern>/T13_ImageServlet</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+  
+  
+  <filter>
+    <filter-name>T08_ServletFilter</filter-name>
+    <filter-class>kr.or.ddit.basic.T08_ServletFilter</filter-class>
+    <init-param>
+      <param-name>init-param</param-name>
+      <param-value>Woo</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>T08_ServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>T09_ServletFilter2</filter-name>
+    <filter-class>kr.or.ddit.basic.T09_ServletFilter2</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>T09_ServletFilter2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+  
+  
+  
+  <listener>
+    <display-name>MyServletContextListener</display-name>
+    <listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class>
+  </listener>
+  
+  <listener>
+    <display-name>MyServletRequestListener</display-name>
+    <listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class>
+  </listener>
+  
+  <listener>
+    <display-name>MyHttpSessionListener</display-name>
+    <listener-class>kr.or.ddit.basic.MyHttpSessionListener</listener-class>
+  </listener>
 
-	<servlet>
-		<servlet-name>T03_ServletParameter</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T03_ServletParameter</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T03_ServletParameter</servlet-name>
-		<url-pattern>/T03_ServletParameter</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T04_ErrorHandler</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T04_ErrorHandler</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T04_ErrorHandler</servlet-name>
-		<url-pattern>/T04_ErrorHandler</url-pattern>
-	</servlet-mapping>
-	
-	<error-page>
-		<error-code>404</error-code>
-		<location>/T04_ErrorHandler</location>
-	</error-page>
-	<error-page>
-		<exception-type>javax.servlet.ServletException</exception-type>
-		<location>/T04_ErrorHandler</location>
-	</error-page>
-	
-	<servlet>
-		<servlet-name>T05_ServletContext</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T05_ServletContext</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T05_ServletContext</servlet-name>
-		<url-pattern>/T05_ServletContext</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T06_ServletCookie</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T06_ServletCookie</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T06_ServletCookie</servlet-name>
-		<url-pattern>/T06_ServletCookie</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T07_ServletSession</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T07_ServletSession</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T07_ServletSession</servlet-name>
-		<url-pattern>/T07_ServletSession</url-pattern>
-	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>T10_ServletContextListener</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T10_ServletContextListener</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T10_ServletContextListener</servlet-name>
-		<url-pattern>/T10_ServletContextListener</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T11_ServletRequestListener</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T11_ServletRequestListener</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T11_ServletRequestListener</servlet-name>
-		<url-pattern>/T11_ServletRequestListener</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>T12_HttpSessionListener</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T12_HttpSessionListener</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T12_HttpSessionListener</servlet-name>
-		<url-pattern>/T12_HttpSessionListener</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>T13_ImageServlet</servlet-name>
-		<servlet-class>kr.or.ddit.basic.T13_ImageServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>T13_ImageServlet</servlet-name>
-		<url-pattern>/T13_ImageServlet</url-pattern>
-	</servlet-mapping>
-
-
-
-	<filter>
-		<filter-name>T08_ServletFilter</filter-name>
-		<filter-class>kr.or.ddit.basic.T08_ServletFilter</filter-class>
-		<init-param>
-			<param-name>init-param</param-name>
-			<param-value>Woo</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>T08_ServletFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-	<filter>
-		<filter-name>T09_ServletFilter2</filter-name>
-		<filter-class>kr.or.ddit.basic.T09_ServletFilter2</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>T09_ServletFilter2</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-	
-	<session-config>
-		<session-timeout>1</session-timeout>
-	</session-config>
-	
-	
-	<listener>
-		<display-name>MyServletContextListener</display-name>
-		<listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class>
-	</listener>
-
-	<listener>
-		<display-name>MyServletRequestListener</display-name>
-		<listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class>
-	</listener>
-	
-	<listener>
-		<display-name>MyHttpSessionListener</display-name>
-		<listener-class>kr.or.ddit.basic.MyHttpSessionListener</listener-class>
-	</listener>
-	
-	
 </web-app>
-
-
-<!--  웹페이지 주소창에서 요청 형식  -->
-<!--  localhost/Servlet/T01_ServletLifeCycle -->
-
-<!--  localhost/Servlet/T02_Servlet -->

@@ -3,10 +3,12 @@ package kr.or.ddit.basic;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/Cycle")
 public class T01_ServletLifeCycle extends HttpServlet {
 /*
 	서블릿에 대하여...

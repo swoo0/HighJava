@@ -13,13 +13,25 @@ import kr.or.ddit.member.service.IMemberService;
 import kr.or.ddit.member.service.MemberServiceImpl;
 import kr.or.ddit.member.vo.MemberVO;
 
-@WebServlet("/member/insert.do")
-public class InsertMemberServlet extends HttpServlet {
+@WebServlet("/member/update.do")
+public class UpdateMemberServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		req.getRequestDispatcher("/WEB-INF/views/member/insertForm.jsp").forward(req, resp);
+		// 1. 파라미터 정보 가져오기
+		String memId = req.getParameter("memId");
+
+		// 2. 서비스 객체 가져오기
+		IMemberService memberService = MemberServiceImpl.getInstance();
+
+		// 3. 회원정보 조회
+		MemberVO mv = memberService.getMember(memId);
+
+		req.setAttribute("mv", mv);
+
+		// 4. 업데이트 화면으로 포워딩
+		req.getRequestDispatcher("/WEB-INF/views/member/updateForm.jsp").forward(req, resp);
 
 	}
 
@@ -42,10 +54,10 @@ public class InsertMemberServlet extends HttpServlet {
 		mv.setMemTel(memTel);
 		mv.setMemAddr(memAddr);
 
-		int cnt = memberService.insertMember(mv);
+		int cnt = memberService.updateMember(mv);
 
 		String msg = "";
-		if (cnt > 0) {
+		if (cnt > 0) { 
 			msg = "성공";
 		} else {
 			msg = "실패!";
@@ -56,7 +68,9 @@ public class InsertMemberServlet extends HttpServlet {
 		// 4. 목록 조회화면으로 이동
 		// req.getRequestDispatcher("/member/list.do").forward(req, resp);
 
-		String redirectUrl = req.getContextPath() + "/member/list.do?msg=" + URLEncoder.encode(msg, "UTF-8");
+//		String redirectUrl = req.getContextPath() + "/member/list.do?msg=" + URLEncoder.encode(msg, "UTF-8");
+
+		String redirectUrl = req.getContextPath() + "/member/detail.do?memId=" + URLEncoder.encode(memId, "UTF-8") + "&msg=" + URLEncoder.encode(msg, "UTF-8");
 
 		resp.sendRedirect(redirectUrl); // 목록조회 화면으로 리다이렉트
 

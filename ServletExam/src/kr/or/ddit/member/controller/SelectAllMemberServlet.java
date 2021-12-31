@@ -16,25 +16,23 @@ import kr.or.ddit.member.vo.MemberVO;
 
 @WebServlet("/member/list.do")
 public class SelectAllMemberServlet extends HttpServlet {
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		// 1. 서비스 객체 생성하기
 		IMemberService memberService = MemberServiceImpl.getInstance();
-		
+
 		// 2. 회원정보 조회
 		List<MemberVO> memList = memberService.getAllMemberList();
-		
+
 		req.setAttribute("memList", memList);
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/views/member/list.jsp");
-		dispatcher.forward(req, resp);  // 뷰페이지로 전달
-		
+
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/member/list.jsp");
+		dispatcher.forward(req, resp); // 뷰페이지로 전달
+
 	}
-	
-	
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);

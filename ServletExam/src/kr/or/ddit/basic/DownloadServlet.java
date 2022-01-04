@@ -21,7 +21,7 @@ public class DownloadServlet extends HttpServlet {
 		
 		// 파일 다운로드 처리를 위한 응답헤더 정보 설정하기
 		resp.setContentType("application/octet-stream");
-		resp.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+		resp.setHeader("Content-Disposition", "attachment;filename=\"" + fileName + "\"");
 		
 		/*
 			Content-Disposition 헤더에 대하여...

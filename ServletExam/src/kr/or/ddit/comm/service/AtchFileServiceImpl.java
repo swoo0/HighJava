@@ -34,7 +34,7 @@ public class AtchFileServiceImpl implements IAtchFileService {
 	@Override
 	public AtchFileVO saveAtchFileList(HttpServletRequest req) throws Exception {
 		
-		String uploadPath = req.getServletContext().getRealPath("") + File.separator + UPLOAD_DIR;
+		String uploadPath = "D:/D_Other/upload_files";
 		
 		File uploadDir = new File(uploadPath);
 		
@@ -120,7 +120,7 @@ public class AtchFileServiceImpl implements IAtchFileService {
 	}
 
 	@Override
-	public AtchFileVO getAtchFileDetaill(AtchFileVO atchFileVO) throws SQLException {
+	public AtchFileVO getAtchFileDetail(AtchFileVO atchFileVO) throws SQLException {
 		return fileDao.getAtchFileDetail(atchFileVO);
 	}
 

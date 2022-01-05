@@ -36,7 +36,7 @@
 				<td><textarea name="memAddr" rows="3" cols="20"></textarea></td>
 			</tr>
 			<tr>
-				<td>첨부파일 :</td>
+				<td>첨부파일:</td>
 				<td><input type="file" name="atchFile"></td>
 			</tr>
 		</table>

@@ -58,8 +58,4 @@ public interface IBoardDao {
 	public List<BoardVO> searchBoard(BoardVO bv);
 	
 	
-	
-	
-	
-	
 }

@@ -42,7 +42,7 @@
 	UPDATE JDBC_BOARD 
 	   SET board_title = #boardTitle#, 
 		   board_writer = #boardWriter#, 
-		   board_content = #boardContent# 	
+		   board_content = #boardContent# 
 	 WHERE board_no = #boardNo#
 
 </update>
@@ -55,7 +55,6 @@
 	 WHERE board_no = #boardNo#
 
 </delete>
-
 
 
 <resultMap id="boardMap" class="board.vo.BoardVO">

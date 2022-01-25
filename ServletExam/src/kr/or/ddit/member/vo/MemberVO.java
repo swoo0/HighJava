@@ -16,16 +16,15 @@ public class MemberVO {
 	private String memName;
 	private String memTel;
 	private String memAddr;
+	private long atchFileId = -1;
 	
-	public MemberVO() {
+	
+	public long getAtchFileId() {
+		return atchFileId;
 	}
 	
-	public MemberVO(String memId, String memName, String memTel, String memAddr) {
-		super();
-		this.memId = memId;
-		this.memName = memName;
-		this.memTel = memTel;
-		this.memAddr = memAddr;
+	public void setAtchFileId(long atchFileId) {
+		this.atchFileId = atchFileId;
 	}
 	
 	public String getMemId() {

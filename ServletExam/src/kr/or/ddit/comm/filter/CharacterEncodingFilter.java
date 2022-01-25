@@ -29,8 +29,6 @@ public class CharacterEncodingFilter implements Filter {
 		
 		fc.doFilter(req, resp);
 		
-		
-		
 	}
 
 	@Override

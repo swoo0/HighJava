@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="board">			
+
+<insert id="write" parameterClass="BoardVO">
+	INSERT INTO JDBC_BOARD 
+	(BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_DATE, BOARD_CONTENT) 
+	VALUES (BOARD_SEQ.NEXTVAL, #title#, #writer#, SYSDATE, #content#)
+</insert>
+
+<update id="update" parameterClass="BoardVO">
+	UPDATE JDBC_BOARD   
+	   SET BOARD_TITLE = #title#,
+		   BOARD_WRITER = #writer#, 
+		   BOARD_CONTENT = #content#,
+		   BOARD_DATE = SYSDATE  
+	 WHERE BOARD_NO = #num#
+</update>
+
+<delete id="delete" parameterClass="String">
+	DELETE FROM JDBC_BOARD
+	 WHERE BOARD_NO = #num#
+</delete>
+
+<resultMap class="BoardVO" id="getList">
+	<result property="num" column="BOARD_NO"/>
+	<result property="title" column="BOARD_TITLE"/>
+	<result property="writer" column="BOARD_WRITER"/>
+	<result property="date" column="BOARD_DATE"/>
+	<result property="content" column="BOARD_CONTENT"/>
+</resultMap>
+
+<select id="getListAll" resultMap="getList">
+	SELECT BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_DATE, BOARD_CONTENT
+	  FROM JDBC_BOARD
+</select>
+
+<select id="search" parameterClass="String" resultMap="getList">
+	SELECT BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_DATE, BOARD_CONTENT
+	  FROM JDBC_BOARD
+	 WHERE BOARD_Writer = #writer#
+</select>
+
+</sqlMap>			
+
+
+
+
+

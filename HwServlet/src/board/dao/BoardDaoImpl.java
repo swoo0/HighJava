@@ -46,6 +46,20 @@ public class BoardDaoImpl implements IBoardDao {
 	}
 
 	@Override
+	public BoardVO getBoard(String boardNo) {
+		
+		BoardVO bv = new BoardVO();
+
+		try {
+			bv = (BoardVO) smc.queryForObject("board.getBoard", boardNo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return bv;
+	}
+	
+	@Override
 	public int writeBoard(BoardVO bv) {
 		
 		int cnt = 0;
@@ -119,6 +133,10 @@ public class BoardDaoImpl implements IBoardDao {
 		
 		return boardList;
 	}
+
+
+
+
 
 	
 }

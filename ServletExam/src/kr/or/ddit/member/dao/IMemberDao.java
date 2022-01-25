@@ -79,7 +79,4 @@ public interface IMemberDao {
 	
 	
 	
-	
-	
-	
 }

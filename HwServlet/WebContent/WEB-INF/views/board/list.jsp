@@ -6,7 +6,7 @@
 <%
 	List<BoardVO> boardList = (List<BoardVO>) request.getAttribute("boardList");
 	
-	String msg = request.getParameter("msg") == null ? "" : request.getParameter("msg");	
+// 	String msg = request.getParameter("msg") == null ? "" : request.getParameter("msg");	
 			
 %>   
     
@@ -34,7 +34,7 @@
 		%>
 		<tr>
 			<td><%=boardList.get(i).getBoardNo() %></td>
-			<td><%=boardList.get(i).getBoardTitle() %></td>
+			<td><a href="detail.do?boardNo=6"><%=boardList.get(i).getBoardTitle() %></a></td>
 			<td><%=boardList.get(i).getBoardWriter() %></td>
 			<td><%=boardList.get(i).getBoardDate() %></td>
 			<td><%=boardList.get(i).getBoardContent() %></td>
@@ -50,7 +50,7 @@
 			}
 		%>
 	</table>
-		<%
+<%-- 		<%
 			if (msg.equals("성공")) {
 		%>		
 			<script>
@@ -58,7 +58,7 @@
 			</script>		
 		<%		
 			}
-		%>
+		%> --%>
 	
 	
 	

@@ -14,6 +14,14 @@ public interface IBoardService {
 	
 	
 	/**
+	 * 주어진 게시글번호로 게시글 정보를 알아내기위한 메서드
+	 * @param boardNo 검색할 게시글 번호
+	 * @return 해당 게시글 번호가 있으면 게시글 정보 리턴.
+	 */
+	public BoardVO getBoard(String boardNo);
+	
+	
+	/**
 	 * BoradVO에 담겨진 자료를 DB에 insert하는 메서드
 	 * 
 	 * @param bv DB에 insert할 자료가 저장된 BoradVO 객체

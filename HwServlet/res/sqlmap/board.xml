@@ -75,36 +75,36 @@
 <!-- 게시글 조회 (결과 한개 - List 필요 없음.)-->
 <select id="getBoard" parameterClass="String" resultMap="boardMap">
 
-	select * from jdbc_board
-	 where board_no = #boardNo#
+	SELECT * FROM JDBC_BOARD
+	 WHERE BOARD_NO = #boardNo#
 	
 </select>
 
 <!-- checkBoard 쿼리 -->
 <select id="checkBoard" parameterClass="String" resultClass="int">
 
-	select count(*) as cnt from jdbc_board
-	 where board_no = #boardNo#
+	SELECT COUNT(*) AS CNT FROM JDBC_BOARD
+	 WHERE BOARD_NO = #boardNo#
 
 </select>
 
 <!-- 게시글 검색 -->
 <select id="searchBoard" parameterClass="boardVO" resultMap="boardMap">
 
-	select *
-	  from jdbc_board
-	 where 1=1
+	SELECT *
+	  FROM JDBC_BOARD
+	 WHERE 1=1
 	 
 	<isNotEmpty property="boardNo">
-		and board_no = #boardNo#
+		AND BOARD_NO = #boardNo#
 	</isNotEmpty> 
 	
 	<isNotEmpty property="boardTitle">
-		and board_title = #boardTitle#
+		AND BOARD_TITLE = #boardTitle#
 	</isNotEmpty>
 	
 	<isNotEmpty property="boardWriter">
-		and board_writer = #boardWriter#
+		AND BOARD_WRITER = #boardWriter#
 	</isNotEmpty>
 	
 <!-- 	<isNotEmpty property="boardDate"> -->

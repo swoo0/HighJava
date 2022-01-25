@@ -31,6 +31,12 @@ public class BoardServiceImpl implements IBoardService {
 		return boardDao.getAllBoardList();
 	}
 
+
+	@Override
+	public BoardVO getBoard(String boardNo) {
+		return boardDao.getBoard(boardNo);
+	}
+	
 	@Override
 	public int writeBoard(BoardVO bv) {
 		return boardDao.writeBoard(bv);
@@ -55,6 +61,9 @@ public class BoardServiceImpl implements IBoardService {
 	public List<BoardVO> searchBoard(BoardVO bv) {
 		return boardDao.searchBoard(bv);
 	}
+
+
+
 
 
 }

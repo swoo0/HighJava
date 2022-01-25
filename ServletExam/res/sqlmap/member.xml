@@ -90,7 +90,8 @@
 <!-- 결과 값이 한개인 경우 -->
 <select id="getMember" parameterClass="String" resultMap="memMap">
 
-	select * from mymember where mem_id = #memId#
+	select * from mymember 
+	where mem_id = #memId#
 
 </select>
 
